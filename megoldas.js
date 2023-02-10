@@ -100,4 +100,51 @@ eredmenyKiiro5(egeszOsztoE(1050,7), `Az osztó maradéktalanul osztja az osztand
 eredmenyKiiro5(egeszOsztoE(2048,3), `Az osztó maradéktalanul osztja az osztandót.<br>`, 
 `Az osztó NEM osztja maradéktalanul az osztandót.<br>`)
 
+document.write(`<h1>Szorgalmaskodás</h1>`)
+
+document.write(`<h2>LNKO - optimalizálás</h2>`)
+function lnkoSzamitas(szam1, szam2){
+//elég, ha a kisebbik szám értékéig fut le a ciklus
+let kisebb=0
+	if(szam1<szam2){
+    	kisebb=szam1
+    }
+    else{
+    	kisebb=szam2
+    }
+let lnko=1
+for(i=2;i<=kisebb;i++){
+    	if(szam1%i==0 && szam2%i==0){
+        lnko=i
+        }  
+    }
+    document.write(`${szam1} és ${szam2} legnagyobb közös osztója ${lnko}<br>`)
+}
+lnkoSzamitas(12,6)
+lnkoSzamitas(3,6)
+lnkoSzamitas(2,4)
+lnkoSzamitas(16,4)
+lnkoSzamitas(11,44)
+lnkoSzamitas(44,11)
+
+document.write(`<h2>Prím - optimalizálás</h2>`)
+function primE(szam3){
+	let osztoPrim=2
+    for(i=2;i<=szam3/2;i++){ //elég a vizsgált szám feléig mennie a ciklusnak
+    	if(szam3%i==0){
+        osztoPrim++
+        }
+    }
+    if(osztoPrim==2){
+    document.write(`${szam3} osztóinak száma ${osztoPrim}, ezért prímszám.<br>`)
+    }
+    else{
+    document.write(`${szam3} osztóinak száma ${osztoPrim}, ezért nem prímszám.<br>`)
+    } 	
+}
+primE(15)
+primE(22)
+primE(31)
+
+
 </script>
